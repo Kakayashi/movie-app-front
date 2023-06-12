@@ -4,10 +4,17 @@ import { AiOutlineSearch } from "react-icons/fa";
 export const Wrapper = styled.div`
 	width: 100%;
 	height: 60px;
-	position: sticky;
+	position: relative;
 	top: 0;
 	background-color: ${({ theme }) => theme.colors.black};
 	color: ${({ theme }) => theme.colors.white};
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: space-between;
+`;
+
+export const WrapperItem = styled.div`
 	display: flex;
 	flex-direction: row;
 	align-items: center;
@@ -35,6 +42,8 @@ export const StyledLink = styled(NavLink)`
 	transition: 0.2s ease-in-out;
 	padding: 5px;
 
+	margin-right: ${({ marginRight }) => (marginRight ? "40px" : "auto")};
+
 	&:hover {
 		color: ${({ theme }) => theme.colors.goldHover};
 		background: ${({ theme }) => theme.colors.blackHover};
@@ -44,6 +53,8 @@ export const StyledLink = styled(NavLink)`
 export const StyledSearch = styled.input`
 	border: 2px solid ${({ theme }) => theme.colors.gold};
 	width: 200px;
+	width: ${({ hasFocus }) => (hasFocus === true ? "400px" : "200px")};
+	transition: all 0.2s ease-in-out;
 	height: 30px;
 	background: ${({ theme }) => theme.colors.black};
 	border-radius: 30px;
@@ -66,4 +77,34 @@ export const StyledSearchWrapper = styled.div`
 		fill: ${({ theme }) => theme.colors.gold};
 		cursor: pointer;
 	}
+`;
+
+export const SearchResultWrapper = styled.div`
+	position: absolute;
+	display: flex;
+	flex-direction: column;
+	max-height: 300px;
+	overflow-y: scroll;
+	overflow-x: hidden;
+	background-color: black;
+	left: 20px;
+	z-index: 100;
+`;
+
+export const SearchResultItem = styled.div`
+	color: #fff;
+	border-bottom: 2px solid gold;
+	width: 390px;
+	min-height: 80px;
+	cursor: pointer;
+	display: flex;
+	align-items: center;
+	gap: 10px;
+
+	&:hover {
+		color: ${({ theme }) => theme.colors.goldHover};
+	}
+`;
+export const SmallPoster = styled.img`
+	width: 40px;
 `;

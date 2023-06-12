@@ -9,16 +9,7 @@ import CustomSlider from "../../atoms/customSlider/CustomSlider";
 import GenreSelect from "../../atoms/select/GenreSelect";
 import YearSelect from "../../atoms/select/YearSelect";
 
-function RankingFilters() {
-	const [Adult, setAdult] = useState(true);
-	const [Rating, setRating] = useState(5.0);
-	const [genre, setGenre] = useState("");
-	const [year, setYear] = useState("");
-
-	const handleAdultChange = (value) => {
-		setAdult(value);
-	};
-
+function RankingFilters({ rating, setRating, genre, setGenre, year, setYear }) {
 	const handleRatingChange = (value) => {
 		setRating(value);
 	};
@@ -32,8 +23,7 @@ function RankingFilters() {
 	};
 
 	console.log({
-		Adult: Adult,
-		Rating: Rating,
+		Rating: rating,
 		genre: genre,
 		year: year,
 	});
@@ -42,8 +32,11 @@ function RankingFilters() {
 		<RankingFiltersWrapper>
 			<RankingFilterTitle>Filters</RankingFilterTitle>
 			<FiltersContainer>
-				<CustomSwitch label={"Adult"} onSwitchChange={handleAdultChange} />
-				<CustomSlider label={"Rating"} onSwitchChange={handleRatingChange} />
+				<CustomSlider
+					label={"Rating"}
+					onSwitchChange={handleRatingChange}
+					track={true}
+				/>
 				<GenreSelect onSwitchChange={handleGenreChange} val={genre} />
 				<YearSelect onSwitchChange={handleYearChange} val={year} />
 			</FiltersContainer>

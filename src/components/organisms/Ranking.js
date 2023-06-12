@@ -7,7 +7,7 @@ function Ranking() {
 	return (
 		<>
 			<Banner title={"Ranking"} />
-			<RankingFilters />
+			{/* <RankingFilters /> */}
 			<RankingList />
 		</>
 	);

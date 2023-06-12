@@ -24,4 +24,10 @@ export const StyledSlider = styled(Slider)`
 	.css-eg0mwd-MuiSlider-thumb {
 		color: ${({ theme }) => theme.colors.gold};
 	}
+	.MuiSlider-rail + .css-1xst22u-MuiSlider-rail {
+		background-color: ${({ theme }) => theme.colors.black} !important;
+	}
+	.css-1h4p1o1-MuiSlider-track {
+		background-color: ${({ theme }) => theme.colors.blackHover} !important;
+	}
 `;

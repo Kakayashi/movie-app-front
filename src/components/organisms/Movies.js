@@ -15,8 +15,6 @@ const Movies = () => {
 	const movieID = useParams();
 
 	const { movieInfo, loading, error } = useMovieInfo({ movieID });
-	console.log("movieID", movieID.movieID);
-	console.log("movieInfo", movieInfo);
 
 	return (
 		<>
